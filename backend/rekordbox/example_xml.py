@@ -1,0 +1,67 @@
+"""
+DJ Copilot AI — Example Rekordbox XML Generator
+Creates a valid example XML file with the exact same structure as a Rekordbox 6 export.
+"""
+
+EXAMPLE_XML_CONTENT = """<?xml version="1.0" encoding="UTF-8"?>
+<DJ_PLAYLISTS Version="1.0.0">
+  <PRODUCT Name="rekordbox" Version="6.8.4" Company="AlphaTheta"/>
+  <COLLECTION Entries="3">
+    <TRACK TrackID="1" Name="Midnight Pulse" Artist="DJ Copilot"
+           Composer="" Album="Test Collection" Grouping="" Genre="Techno"
+           Kind="WAV File" Size="1323000" TotalTime="30"
+           DiscNumber="0" TrackNumber="1" Year="2026" AverageBpm="128.00"
+           DateAdded="2026-05-07" BitRate="1411" SampleRate="22050"
+           Comments="Synthetic Techno Example" PlayCount="0" Rating="0"
+           Location="file://localhost/D:/DJ/data/examples/techno_example.wav"
+           Tonality="Am" Colour="0x00FF00">
+      <TEMPO Inizio="0.033" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.0" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Build" Type="0" Start="7.5" Num="1" Red="230" Green="150" Blue="0"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="15.0" Num="2" Red="230" Green="20" Blue="20"/>
+    </TRACK>
+    <TRACK TrackID="2" Name="Perreo Nocturno" Artist="DJ Copilot"
+           Composer="" Album="Test Collection" Grouping="" Genre="Reggaeton"
+           Kind="WAV File" Size="1323000" TotalTime="30"
+           DiscNumber="0" TrackNumber="2" Year="2026" AverageBpm="95.00"
+           DateAdded="2026-05-07" BitRate="1411" SampleRate="22050"
+           Comments="Synthetic Reggaeton Example" PlayCount="0" Rating="0"
+           Location="file://localhost/D:/DJ/data/examples/reggaeton_example.wav"
+           Tonality="Dm" Colour="0xFF6600">
+      <TEMPO Inizio="0.033" Bpm="95.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="0.0" Num="0" Red="255" Green="100" Blue="0"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="10.0" Num="1" Red="230" Green="20" Blue="20"/>
+    </TRACK>
+    <TRACK TrackID="3" Name="Groove Machine" Artist="DJ Copilot"
+           Composer="" Album="Test Collection" Grouping="" Genre="House"
+           Kind="WAV File" Size="1323000" TotalTime="30"
+           DiscNumber="0" TrackNumber="3" Year="2026" AverageBpm="124.00"
+           DateAdded="2026-05-07" BitRate="1411" SampleRate="22050"
+           Comments="Synthetic House Example" PlayCount="0" Rating="0"
+           Location="file://localhost/D:/DJ/data/examples/house_example.wav"
+           Tonality="Cm" Colour="0x0066FF">
+      <TEMPO Inizio="0.033" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.0" Num="0" Red="0" Green="100" Blue="255"/>
+      <POSITION_MARK Name="Build" Type="0" Start="10.0" Num="1" Red="230" Green="150" Blue="0"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="15.0" Num="2" Red="230" Green="20" Blue="20"/>
+    </TRACK>
+  </COLLECTION>
+  <PLAYLISTS>
+    <NODE Type="0" Name="ROOT" Count="1">
+      <NODE Name="DJ Copilot Test" Type="1" KeyType="0" Entries="3">
+        <TRACK Key="1"/>
+        <TRACK Key="2"/>
+        <TRACK Key="3"/>
+      </NODE>
+    </NODE>
+  </PLAYLISTS>
+</DJ_PLAYLISTS>
+"""
+
+
+def generate_example_xml(output_path: str):
+    """Write the example Rekordbox XML file."""
+    import os
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(EXAMPLE_XML_CONTENT.strip())
