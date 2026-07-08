@@ -551,8 +551,6 @@ AI Systems • Real-Time Software • Music Intelligence • Backend Engineering
 GitHub:
 https://github.com/Sergioh-alt
 
-LinkedIn:
-https://www.linkedin.com/in/sergio-serrano-ml/
 
 ---
 
